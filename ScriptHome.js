@@ -17,12 +17,27 @@ function Addstock(){
 }
 
 
+function GetAllStocknames(){
+  let stockdata = document.getElementById('StockData');
+  
+  let allstocks = stockdata.querySelectorAll("tr td input[type='text']");
+  
+  let name 
+  
+  for (name of allstocks){
+    
+    GetApi(name.value)
+    
+  }  
+  
 
 
-function GetApi(){
+}
+
+function GetApi(stockname){
 
   let status = false
-  let url = "https://api.allorigins.win/get?url=" + encodeURIComponent('https://in.finance.yahoo.com/quote/INFY/history?p=INFY')
+  let url = "https://api.allorigins.win/get?url=" + encodeURIComponent('https://in.finance.yahoo.com/quote/'+stockname+'/history?p='+stockname)
 $.get(url,
 function(data){
   Getdetails(data);
@@ -43,5 +58,5 @@ function Getdetails(data){
 
   }
 
-
+console.log(content)
 }
