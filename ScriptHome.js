@@ -62,11 +62,11 @@ function Getdetails(data,stockname){
     contentstr = contentstr.substring(contentstr.indexOf('<table'))
     contentstr = contentstr.substring(0,contentstr.indexOf('</table>'))
     
-    let Name = document.createElement('div')
-    Name.innerHTML = stockname
+    let Name1 = document.createElement('div')
+    Name1.innerHTML = stockname
     let contentdiv = document.createElement('div')
     contentdiv.innerHTML = contentstr
-    $('form').append(Name)
+    $('form').append(Name1)
     $('form').append(contentdiv)
     
 
