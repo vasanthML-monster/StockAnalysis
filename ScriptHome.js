@@ -64,17 +64,18 @@ function Getdetails(data,stockname){
     
     let Name1 = document.createElement('div')
     Name1.innerHTML = stockname
-    let contentdiv = document.createElement('div')
+   
     let allopenvals = []
+    allopenvals.push(Name1)
     let count
     for (count of $(contentstr).find('tbody tr td:nth-child(2)')){
       allopenvals.push(count.outerText)
     }
     
-    contentdiv.innerHTML = allopenvals
+    $('datadiv').text(allopenvals);
     console.log($(contentstr).find('tbody tr td:nth-child(2)'));
-    $('form').append(Name1)
-    $('form').append(contentdiv)
+   
+
     
 
   }
