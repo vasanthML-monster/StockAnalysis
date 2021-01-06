@@ -49,14 +49,18 @@ function(data){
 
 function Getdetails(data){
   let stockdata = document.getElementById('StockData');
-  let content = ""
+  let content = []
 
   if(data["status"]["http_code"] != 200){
     $('#Apierror').html(`Error fetching details ${data["status"]["http_code"]}`)
   }else{
-    content = data["contents"]
+    content.push(data["contents"])
+    let contentdiv = document.createElement('div')
+    contentdiv.innerHTML = data["contents"]
+    
+    $('form').append(contentdiv)
 
   }
 
-console.log(content)
+
 }
