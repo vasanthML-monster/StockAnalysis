@@ -50,13 +50,21 @@ function(data){
 function Getdetails(data){
   let stockdata = document.getElementById('StockData');
   let content = []
+  let contentstr = ""
 
   if(data["status"]["http_code"] != 200){
     $('#Apierror').html(`Error fetching details ${data["status"]["http_code"]}`)
   }else{
     content.push(data["contents"])
+    
+    contentstr = data["contents"]
+    
+    contentstr = contentstr.substring(contentstr.indexOf('<table class="W(100%) M(0)" data-test="historical-prices">'))
+    contentstr = contentstr.substring(0,contentstr.indexOf('</table>'))
+    
+    
     let contentdiv = document.createElement('div')
-    contentdiv.innerHTML = data["contents"]
+    contentdiv.innerHTML = contentstr
     
     $('form').append(contentdiv)
 
