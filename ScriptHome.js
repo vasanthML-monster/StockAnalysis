@@ -72,7 +72,7 @@ function Getdetails(data,stockname){
       allopenvals.push(count.outerText)
     }
     
-    $('datadiv').text(allopenvals);
+    $('#datadiv').text(allopenvals);
     console.log($(contentstr).find('tbody tr td:nth-child(2)'));
    
 
