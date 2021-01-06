@@ -66,8 +66,9 @@ function Getdetails(data,stockname){
     Name.innerHTML = stockname
     let contentdiv = document.createElement('div')
     contentdiv.innerHTML = contentstr
-    
+    $('form').append(Name)
     $('form').append(contentdiv)
+    
 
   }
 
