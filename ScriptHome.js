@@ -59,7 +59,7 @@ function Getdetails(data){
     
     contentstr = data["contents"]
     
-    contentstr = contentstr.substring(contentstr.indexOf('<table class="W(100%) M(0)" data-test="historical-prices">'))
+    contentstr = contentstr.substring(contentstr.indexOf('<table'))
     contentstr = contentstr.substring(0,contentstr.indexOf('</table>'))
     
     
