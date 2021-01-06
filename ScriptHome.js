@@ -40,14 +40,14 @@ function GetApi(stockname){
   let url = "https://api.allorigins.win/get?url=" + encodeURIComponent('https://in.finance.yahoo.com/quote/'+stockname+'/history?p='+stockname)
 $.get(url,
 function(data){
-  Getdetails(data);
+  Getdetails(data,stockname);
 }
 )
 
 
 }
 
-function Getdetails(data){
+function Getdetails(data,stockname){
   let stockdata = document.getElementById('StockData');
   let content = []
   let contentstr = ""
@@ -62,7 +62,8 @@ function Getdetails(data){
     contentstr = contentstr.substring(contentstr.indexOf('<table'))
     contentstr = contentstr.substring(0,contentstr.indexOf('</table>'))
     
-    
+    let Name = document.createElement('div')
+    Name.innerHTML = stockname
     let contentdiv = document.createElement('div')
     contentdiv.innerHTML = contentstr
     
