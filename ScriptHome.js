@@ -66,13 +66,13 @@ function Getdetails(data,stockname){
     Name1.innerHTML = stockname
    
     let allopenvals = []
-    allopenvals.push(Name1)
+    allopenvals.push(stockname)
     let count
     for (count of $(contentstr).find('tbody tr td:nth-child(2)')){
       allopenvals.push(count.outerText)
     }
-    
-    $('#datadiv').text(allopenvals);
+    let prevcontent = $('#datadiv').text()
+    $('#datadiv').text(prevcontent.concat(allopenvals.toString()));
     console.log($(contentstr).find('tbody tr td:nth-child(2)'));
    
 
