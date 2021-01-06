@@ -67,7 +67,7 @@ function Getdetails(data,stockname){
     let contentdiv = document.createElement('div')
     
     
-    contentdiv.innerHTML = $(contentstr).find('tbody tr td:nth-child(2)')
+    contentdiv.append($(contentstr).find('tbody tr td:nth-child(2)').clone()).html();
     $('form').append(Name1)
     $('form').append(contentdiv)
     
