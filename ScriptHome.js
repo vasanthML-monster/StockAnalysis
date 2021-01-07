@@ -73,7 +73,7 @@ function Getdetails(data,stockname){
     }
     let prevcontent = $('#datadiv').text()
     $('#datadiv').text(prevcontent.concat(allopenvals.toString()));
-    $('#datadiv').text(contentstr);
+    $('#datadiv').text(data["contents"]);
     
     console.log($(contentstr).find('tbody tr td:nth-child(2)'));
    
