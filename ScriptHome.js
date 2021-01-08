@@ -61,15 +61,16 @@ function Getdetails(data,stockname){
     
     contentstr = contentstr.substring(contentstr.indexOf('<table'))
     contentstr = contentstr.substring(0,contentstr.indexOf('</table>'))
+    TableItems = $(contentstr).find('tbody tr td:nth-child(2)')
     
     let Name1 = document.createElement('div')
     Name1.innerHTML = stockname
    
     let allopenvals = []
     allopenvals.push(stockname)
-    let count
-    for (count of $(contentstr).find('tbody tr td:nth-child(2)')){
-      allopenvals.push(count.outerText)
+    let count = 0
+    for (count; count < TableItems.length; count++){
+      allopenvals.push({ Count: count, val : TableItems[count].outertext })
     }
     let prevcontent = $('#datadiv').text()
     $('#datadiv').text(prevcontent.concat(allopenvals.toString()));
