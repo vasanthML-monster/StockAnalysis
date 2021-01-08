@@ -37,7 +37,7 @@ function GetAllStocknames(){
 function GetApi(stockname){
 
   let status = false
-  let url = "https://api.allorigins.win/get?url=" + encodeURIComponent('https://in.finance.yahoo.com/quote/'+stockname+'/history?p='+stockname)
+  let url = "https://api.allorigins.win/get?url=" + encodeURIComponent('https://in.finance.yahoo.com/quote/'+stockname.toUpperCase()+'/history?p='+stockname.toUpperCase())
 $.get(url,
 function(data){
   Getdetails(data,stockname);
@@ -73,7 +73,7 @@ function Getdetails(data,stockname){
       allopenvals.push({ Count: count, val : TableItems[count].outertext })
     }
     let prevcontent = $('#datadiv').text()
-    $('#datadiv').text(prevcontent.concat(allopenvals.toString()));
+    $('#datadiv').text(prevcontent.concat(allopenvals[0]["val"].toString()));
     
     console.log($(contentstr).find('tbody tr td:nth-child(2)'));
    
