@@ -76,9 +76,6 @@ function Getdetails(data,stockname){
     
     console.log($(contentstr).find('tbody tr td:nth-child(2)'));
    
-
-    
-
   }
 
 
