@@ -73,7 +73,7 @@ function Getdetails(data,stockname){
       allopenvals.push({ Count: count, val : TableItems[count].outertext })
     }
     let prevcontent = $('#datadiv').text()
-    $('#datadiv').text(prevcontent.concat(allopenvals[0]["val"].toString()));
+    $('#datadiv').text(prevcontent.concat(allopenvals[0]));
 APIcontent = allopenvals
     console.log($(contentstr).find('tbody tr td:nth-child(2)'));
    
